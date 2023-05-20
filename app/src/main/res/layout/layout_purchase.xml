@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/custom_background"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Detail Information"
+        android:background="@drawable/custom_title"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter your Name"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/ed_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:hint="Full Name"
+            android:background="@drawable/cutom_edt4"/>
+
+        <TextView
+            android:paddingTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter your Phone Number"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/ed_PhoneNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:hint="Phone number"
+            android:background="@drawable/cutom_edt4"/>
+
+        <TextView
+            android:paddingTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Enter your Address"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/ed_Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:hint="Address"
+            android:background="@drawable/cutom_edt4"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_No"
+            android:layout_marginLeft="18dp"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            app:cornerRadius="8dp"
+            android:text="No, I don't want"
+            android:textSize="15sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#ACB0B3"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Yes"
+            android:layout_marginLeft="25dp"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            app:cornerRadius="8dp"
+            android:text="Purchase Now"
+            android:textSize="15sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#A6DAF5"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</LinearLayout>
