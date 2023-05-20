@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/im_signin"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/logo"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_marginTop="135dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txt_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:layout_marginStart="20dp"
+        android:textSize="40dp"
+        android:textColor="#31C537"/>
+
+    <TextView
+        android:id="@+id/tv_user"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@id/txt_signup"/>
+    <EditText
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tv_user"
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/custom_edt2"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@id/et_email"/>
+    <EditText
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tv_password"
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/custom_edt2"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_cfpassword"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm Password"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@id/et_password"/>
+    <EditText
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tv_cfpassword"
+        android:id="@+id/et_cfpassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/custom_edt2"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_below="@id/et_cfpassword"
+        android:id="@+id/btn_signin"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#9fffb8"
+        android:text="Sign Up"
+        android:textColor="#31C537"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:cornerRadius="18dp"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_signin"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="10dp"
+        android:textSize="18dp"
+        android:text="Click to Login"
+        android:textStyle="bold|italic"
+        android:id="@+id/tv_Login"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+</RelativeLayout>

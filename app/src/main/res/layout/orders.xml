@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:background="@drawable/back"
+        android:layout_centerHorizontal="true"/>
+
+<!--    <TextView-->
+<!--        android:layout_below="@id/ed_Profile"-->
+<!--        android:id="@+id/ed_GioHang"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:background="@drawable/cutom_edt3"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="Your Cart"-->
+<!--        android:textSize="19dp"-->
+<!--        android:gravity="center"-->
+<!--        android:textStyle="bold|italic"-->
+<!--        android:paddingHorizontal="10dp"-->
+<!--        android:layout_marginStart="30dp"-->
+<!--        android:layout_marginEnd="30dp"-->
+<!--        android:drawableLeft="@drawable/thanhtoan"-->
+<!--        android:drawablePadding="-70dp" />-->
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/ed_Profile"
+        android:id="@+id/et_LichHen"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textSize="19dp"
+        android:text="Appointment Schedule"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:drawableLeft="@drawable/calender"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/cutom_edt3"
+        android:drawablePadding="-40dp"/>
+
+
+    <TextView
+        android:layout_below="@id/img_logo"
+        android:id="@+id/ed_Profile"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/cutom_edt3"
+        android:layout_marginTop="30dp"
+        android:text="Profile"
+        android:textSize="19dp"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:paddingHorizontal="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="-60dp"/>
+
+    <TextView
+        android:layout_below="@id/et_LichHen"
+        android:id="@+id/ed_ChangePass"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/cutom_edt3"
+        android:layout_marginTop="20dp"
+        android:text="Change Password"
+        android:textSize="19dp"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:paddingHorizontal="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:drawableLeft="@drawable/changepass"
+        android:drawablePadding="-50dp"/>
+
+    <TextView
+        android:layout_below="@id/ed_ChangePass"
+        android:id="@+id/ed_LogOut"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/cutom_edt3"
+        android:layout_marginTop="20dp"
+        android:text="Logout"
+        android:textSize="19dp"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        android:paddingHorizontal="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:drawableLeft="@drawable/logout"
+        android:drawablePadding="-50dp"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/custom_menu"
+        app:itemIconTint="#0885C3"
+        app:itemTextColor="#0885C3"
+        app:menu="@menu/menu2" />
+
+</RelativeLayout>

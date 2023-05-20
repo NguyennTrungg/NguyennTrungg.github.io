@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/im_signin"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/logo"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/txt_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="20dp"
+        android:textSize="40dp"
+        android:textColor="#20A2E3"/>
+
+    <TextView
+        android:id="@+id/txt_sigin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in to continue"
+        android:layout_below="@+id/txt_login"
+        android:textColor="#20A2E3"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_marginStart="25dp"/>
+
+    <TextView
+        android:id="@+id/tv_user"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@id/txt_sigin"/>
+    <EditText
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tv_user"
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/custom_edt"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@id/et_email"/>
+    <EditText
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tv_password"
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/custom_edt"
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"/>
+
+    <TextView
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/et_password"
+        android:id="@+id/tv_fogortpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Forgot password"
+        android:textStyle="bold|italic"
+        android:textColor="#20A2E3"
+        android:layout_centerHorizontal="true"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_below="@id/tv_fogortpass"
+        android:id="@+id/btn_signin"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#C0E4F6"
+        android:text="Sign In"
+        android:textColor="#3BBBF4"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:cornerRadius="18dp"
+        android:textAllCaps="false"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_below="@+id/btn_signin"
+        android:id="@+id/btn_GG"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/google"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_marginStart="40dp"
+        android:layout_centerHorizontal="true"/>
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:visibility="gone"/>
+</RelativeLayout>
