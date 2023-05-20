@@ -10,7 +10,9 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
         <TextView
             android:id="@+id/txt_vaccine"
             android:layout_width="match_parent"
