@@ -5,33 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AppointmentSchedule"
-    android:id="@+id/appointment_layout">
+    android:id="@+id/appointment_layout"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txt_vaccine"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vaccine: "
-        android:textSize="25dp"/>
-    <TextView
-        android:id="@+id/txt_takecare"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Take care: "
-        android:textSize="25dp"
-        android:layout_below="@id/txt_vaccine"/>
-    <TextView
-        android:id="@+id/txt_bath"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Animal Bath: "
-        android:textSize="25dp"
-        android:layout_below="@id/txt_takecare"/>
-    <TextView
-        android:id="@+id/txt_grooming"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Grooming: "
-        android:textSize="25dp"
-        android:layout_below="@id/txt_bath"/>
+        android:layout_centerVertical="true">
+        <TextView
+            android:id="@+id/txt_vaccine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vaccine: "
+            android:textSize="25dp"/>
+        <TextView
+            android:id="@+id/txt_takecare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Take care: "
+            android:textSize="25dp"
+            android:layout_below="@id/txt_vaccine"/>
+        <TextView
+            android:id="@+id/txt_bath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Animal Bath: "
+            android:textSize="25dp"
+            android:layout_below="@id/txt_takecare"/>
+        <TextView
+            android:id="@+id/txt_grooming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grooming: "
+            android:textSize="25dp"
+            android:layout_below="@id/txt_bath"/>
+    </RelativeLayout>
+
 </RelativeLayout>
