@@ -8,37 +8,86 @@
     android:id="@+id/appointment_layout"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:id="@+id/panel"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:orientation="horizontal"
+        android:weightSum="16"
+        android:background="@drawable/custom_view">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:src="@drawable/baseline_navigate_before_24"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_gravity="start|center_vertical"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="11"
+            android:id="@+id/tx_Total"
+            android:text="Your Apointment"
+            android:gravity="center"
+            android:textStyle="bold|italic"
+            android:textSize="30sp"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/panel">
 
         <TextView
             android:id="@+id/txt_vaccine"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="Vaccine: "
-            android:textSize="25dp"/>
+            android:textSize="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textStyle="bold"
+            android:background="@drawable/cutom_edt4"/>
         <TextView
             android:id="@+id/txt_takecare"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:text="Take care: "
+            android:textStyle="bold"
             android:textSize="25dp"
-            android:layout_below="@id/txt_vaccine"/>
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/txt_vaccine"
+            android:background="@drawable/cutom_edt4"/>
         <TextView
             android:id="@+id/txt_bath"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:text="Animal Bath: "
             android:textSize="25dp"
-            android:layout_below="@id/txt_takecare"/>
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/txt_takecare"
+            android:background="@drawable/cutom_edt4"/>
         <TextView
             android:id="@+id/txt_grooming"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:text="Grooming: "
             android:textSize="25dp"
-            android:layout_below="@id/txt_bath"/>
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/txt_bath"
+            android:background="@drawable/cutom_edt4"/>
     </RelativeLayout>
 
 </RelativeLayout>

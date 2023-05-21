@@ -40,11 +40,12 @@
         android:layout_below="@id/tv_user"
         android:id="@+id/et_email"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="65dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/custom_edt2"
-        android:paddingLeft="15dp"/>
+        android:paddingLeft="15dp"
+        android:inputType="textEmailAddress"/>
 
     <TextView
         android:id="@+id/tv_password"
@@ -56,17 +57,37 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:layout_below="@id/et_email"/>
-    <EditText
-        android:layout_marginTop="5dp"
-        android:layout_below="@id/tv_password"
-        android:id="@+id/et_password"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTil"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/custom_edt2"
-        android:inputType="textPassword"
-        android:paddingLeft="15dp"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_password"
+        app:hintEnabled="false"
+        app:passwordToggleEnabled="true">
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_edt2"
+            android:drawablePadding="20dp"
+            android:inputType="textPassword"
+            android:padding="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--    <EditText-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_below="@id/tv_password"-->
+<!--        android:id="@+id/et_password"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginStart="30dp"-->
+<!--        android:layout_marginEnd="30dp"-->
+<!--        android:background="@drawable/custom_edt2"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:paddingLeft="15dp"/>-->
 
     <TextView
         android:id="@+id/tv_cfpassword"
@@ -77,25 +98,44 @@
         android:text="Confirm Password"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:layout_below="@id/et_password"/>
-    <EditText
-        android:layout_marginTop="5dp"
-        android:layout_below="@id/tv_cfpassword"
-        android:id="@+id/et_cfpassword"
+        android:layout_below="@id/passwordTil"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTil1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/custom_edt2"
-        android:inputType="textPassword"
-        android:paddingLeft="15dp"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_cfpassword"
+        app:hintEnabled="false"
+        app:passwordToggleEnabled="true">`
+        <EditText
+            android:id="@+id/et_cfpassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_edt2"
+            android:drawablePadding="20dp"
+            android:inputType="textPassword"
+            android:padding="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--    <EditText-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_below="@id/tv_cfpassword"-->
+<!--        android:id="@+id/et_cfpassword"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginStart="30dp"-->
+<!--        android:layout_marginEnd="30dp"-->
+<!--        android:background="@drawable/custom_edt2"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:paddingLeft="15dp"/>-->
 
     <com.google.android.material.button.MaterialButton
-        android:layout_below="@id/et_cfpassword"
+        android:layout_below="@id/passwordTil1"
         android:id="@+id/btn_signin"
         style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"

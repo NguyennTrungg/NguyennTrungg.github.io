@@ -117,7 +117,6 @@ public class Cart extends AppCompatActivity implements ICartLoadListener {
                             });
                         }
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
                         cartLoadListener.onCartLoadFailed(error.getMessage());
