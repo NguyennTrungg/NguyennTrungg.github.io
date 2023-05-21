@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -28,6 +29,7 @@ import org.greenrobot.eventbus.EventBus;
 
 public class AppointmentSchedule extends AppCompatActivity implements View.OnLongClickListener{
     private TextView txtVaccine, txtTakecare, txtBath, txtGrooming;
+    private ImageView btnBack;
     private DatabaseReference mDatabase;
     RelativeLayout appointmentLayout;
 
@@ -49,6 +51,9 @@ public class AppointmentSchedule extends AppCompatActivity implements View.OnLon
         txtTakecare.setOnLongClickListener(this);
         txtBath.setOnLongClickListener(this);
         txtGrooming.setOnLongClickListener(this);
+
+        btnBack = (ImageView) findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> finish());
 
         appointmentLayout = (RelativeLayout) findViewById(R.id.appointment_layout);
 

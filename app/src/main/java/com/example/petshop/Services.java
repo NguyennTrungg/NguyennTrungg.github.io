@@ -239,6 +239,7 @@ public class Services extends AppCompatActivity implements View.OnClickListener{
                         String uid = user.getUid();
                         mDatabase = FirebaseDatabase.getInstance().getReference("user");
                         mDatabase.child(uid).child(service).setValue(edDate.getText() + " " + edTime.getText());
+                        Toast.makeText(Services.this,"Your apointment has been set, see you there!", Toast.LENGTH_SHORT).show();
                     }
                     dialog.dismiss();
                 } else {
