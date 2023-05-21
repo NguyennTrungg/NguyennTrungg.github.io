@@ -10,7 +10,8 @@
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:background="@drawable/back"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
 
     <TextView
         android:id="@+id/et_LichHen"
