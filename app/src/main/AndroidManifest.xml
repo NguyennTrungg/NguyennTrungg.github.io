@@ -25,37 +25,37 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SignUp_In"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SignIn"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SignUp"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ForgotPass"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Profile"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Shoping"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Services"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Other"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Cart"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ItemDetail"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".PetDetail"
             android:exported="false" />
