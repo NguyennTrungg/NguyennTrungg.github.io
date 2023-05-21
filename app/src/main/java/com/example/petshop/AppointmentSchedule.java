@@ -1,13 +1,18 @@
 package com.example.petshop;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.petshop.evenbus.MyUpdateCartEvent;
+import com.example.petshop.evenbus.MyUpdateScheduleEvent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -19,7 +24,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class AppointmentSchedule extends AppCompatActivity {
+import org.greenrobot.eventbus.EventBus;
+
+public class AppointmentSchedule extends AppCompatActivity implements View.OnLongClickListener{
     private TextView txtVaccine, txtTakecare, txtBath, txtGrooming;
     private DatabaseReference mDatabase;
     RelativeLayout appointmentLayout;
@@ -37,6 +44,11 @@ public class AppointmentSchedule extends AppCompatActivity {
         txtTakecare = (TextView) findViewById(R.id.txt_takecare);
         txtBath = (TextView) findViewById(R.id.txt_bath);
         txtGrooming = (TextView) findViewById(R.id.txt_grooming);
+
+        txtVaccine.setOnLongClickListener(this);
+        txtTakecare.setOnLongClickListener(this);
+        txtBath.setOnLongClickListener(this);
+        txtGrooming.setOnLongClickListener(this);
 
         appointmentLayout = (RelativeLayout) findViewById(R.id.appointment_layout);
 
@@ -65,5 +77,48 @@ public class AppointmentSchedule extends AppCompatActivity {
                     }
                 });
 
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        if (v == txtVaccine)
+            deleteSchedule("Vaccine");
+        if (v == txtTakecare)
+            deleteSchedule("TakeCare");
+        if (v == txtBath)
+            deleteSchedule("AnimalBath");
+        if (v == txtGrooming)
+            deleteSchedule("Grooming");
+        return false;
+    }
+
+    public void deleteSchedule(String service){
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(AppointmentSchedule.this);
+        builder1.setTitle("Delete Schedule?")
+                .setMessage("Do you want to delete your scheduled " + service + " ?")
+                .setCancelable(true)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        String uid = user.getUid();
+                        FirebaseDatabase.getInstance()
+                                .getReference("user")
+                                .child(uid)
+                                .child(service)
+                                .removeValue()
+                                .addOnSuccessListener(aVoid -> EventBus.getDefault().postSticky(new MyUpdateScheduleEvent()));
+                        dialog.cancel();
+                        finish();
+                        startActivity(getIntent());
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .show();
     }
 }

@@ -1,71 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/custom_background"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/ed_date"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:text="Service Schedule"
+        android:background="@drawable/custom_title"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="60dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date:"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
+            android:text="Choose Date"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
         <EditText
             android:id="@+id/et_date"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:imeOptions="actionDone"
-            android:singleLine="true"
-            android:hint="dd-mm-yyyy"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SELECT DATE"
+            android:padding="12dp"
+            android:hint="dd-mm-yyyy"
+            android:background="@drawable/cutom_edt4"
+            android:textAlignment="center"/>
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_date"
-            android:layout_marginStart="10dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Date"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:backgroundTint="#A6DAF5"
+            android:textColor="@color/black"
+            app:cornerRadius="8dp"
+            android:layout_marginHorizontal="100dp"/>
+
+        <TextView
+            android:paddingTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose Time"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/et_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:hint="00:00"
+            android:background="@drawable/cutom_edt4"
+            android:textAlignment="center"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Time"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:backgroundTint="#A6DAF5"
+            android:textColor="@color/black"
+            app:cornerRadius="8dp"
+            android:layout_marginHorizontal="100dp"/>
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ed_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:layout_below="@id/ed_date">
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="Time:"
-            android:textSize="20dp"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_No"
+            android:layout_marginLeft="18dp"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            app:cornerRadius="8dp"
+            android:text="No, I don't want"
+            android:textSize="15sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#ACB0B3"
+            android:textColor="@color/black"
             android:textStyle="bold"/>
 
-        <EditText
-            android:id="@+id/et_time"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:imeOptions="actionDone"
-            android:singleLine="true"
-            android:hint="00:00"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SELECT TIME"
-            android:id="@+id/btn_time"
-            android:layout_marginStart="10dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Yes"
+            android:layout_marginLeft="25dp"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            app:cornerRadius="8dp"
+            android:text="Book"
+            android:textSize="15sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#A6DAF5"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
     </LinearLayout>
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:layout_below="@id/ed_time"
-        android:layout_centerHorizontal="true"/>
-</RelativeLayout>
+</LinearLayout>
