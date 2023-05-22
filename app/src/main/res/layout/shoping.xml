@@ -22,7 +22,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="135dp"
             android:layout_weight="11"
-            android:text="Drink List"
+            android:text="Item List"
             android:textSize="30sp"
             android:textStyle="bold" />
 

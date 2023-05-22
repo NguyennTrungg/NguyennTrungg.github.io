@@ -108,7 +108,7 @@ public class AppointmentSchedule extends AppCompatActivity implements View.OnLon
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         String uid = user.getUid();
                         FirebaseDatabase.getInstance()
-                                .getReference("user")
+                                .getReference("Schedule")
                                 .child(uid)
                                 .child(service)
                                 .removeValue()
