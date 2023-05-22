@@ -14,22 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.petshop.ItemDetail;
 import com.example.petshop.R;
-import com.example.petshop.evenbus.MyUpdateCartEvent;
 import com.example.petshop.listener.ICartLoadListener;
 import com.example.petshop.listener.IRecyclerViewClickListner;
-import com.example.petshop.model.CartModel;
 import com.example.petshop.model.ItemModel;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import org.greenrobot.eventbus.EventBus;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,7 +40,7 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyItemView
     @Override
     public MyItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new MyItemViewHolder(LayoutInflater.from(context)
-                .inflate(R.layout.layout_drink_item, parent, false));
+                .inflate(R.layout.layout_item, parent, false));
     }
 
     @Override

@@ -30,6 +30,8 @@ import com.example.petshop.evenbus.MyUpdateCartEvent;
 import com.example.petshop.listener.ICartLoadListener;
 import com.example.petshop.model.CartModel;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -59,6 +61,7 @@ public class Cart extends AppCompatActivity implements ICartLoadListener {
     Button btnPurchase;
 
     ICartLoadListener cartLoadListener;
+    String uid;
 
     @Override
     protected void onStart() {
@@ -127,6 +130,8 @@ public class Cart extends AppCompatActivity implements ICartLoadListener {
     private void init() {
         ButterKnife.bind(this);
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
         cartLoadListener = this;
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerCart.setLayoutManager(layoutManager);
@@ -144,6 +149,27 @@ public class Cart extends AppCompatActivity implements ICartLoadListener {
         EditText edName = dialog.findViewById(R.id.ed_Name);
         EditText edPhone = dialog.findViewById(R.id.ed_PhoneNum);
         EditText edAddress = dialog.findViewById(R.id.ed_Address);
+
+        FirebaseDatabase.getInstance().getReference("Users").child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String name = ""+snapshot.child("name").getValue();
+                String phone = ""+snapshot.child("phone").getValue();
+                String address = ""+snapshot.child("address").getValue();
+
+                if (name.compareTo("null") == 0) edName.setText("");
+                else edName.setText(name);
+                if (phone.compareTo("null") == 0) edPhone.setText("");
+                else edPhone.setText(phone);
+                if (address.compareTo("null") == 0) edAddress.setText("");
+                else edAddress.setText(address);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         Window window = dialog.getWindow();
         if (window == null){

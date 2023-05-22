@@ -14,9 +14,27 @@
         android:layout_marginTop="30dp"/>
 
     <TextView
-        android:id="@+id/et_LichHen"
+        android:id="@+id/txt_profile"
         android:layout_marginTop="20dp"
         android:layout_below="@id/img_logo"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textSize="19dp"
+        android:text="Profile"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:drawableLeft="@drawable/user"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/cutom_edt3"
+        android:drawablePadding="-60dp"
+        android:paddingStart="20dp"
+        />
+
+    <TextView
+        android:id="@+id/txt_LichHen"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/txt_profile"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:textSize="19dp"
@@ -27,12 +45,13 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/cutom_edt3"
-        android:drawablePadding="-40dp"/>
+        android:drawablePadding="-30dp"
+        android:paddingStart="10dp"/>
 
 
     <TextView
-        android:id="@+id/ed_ChangePass"
-        android:layout_below="@id/et_LichHen"
+        android:id="@+id/txt_ChangePass"
+        android:layout_below="@id/txt_LichHen"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@drawable/cutom_edt3"
@@ -48,8 +67,8 @@
         android:drawablePadding="-50dp"/>
 
     <TextView
-        android:id="@+id/ed_LogOut"
-        android:layout_below="@id/ed_ChangePass"
+        android:id="@+id/txt_LogOut"
+        android:layout_below="@id/txt_ChangePass"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@drawable/cutom_edt3"
@@ -62,7 +81,8 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:drawableLeft="@drawable/logout"
-        android:drawablePadding="-50dp"/>
+        android:drawablePadding="-70dp"
+        android:paddingStart="30dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav"

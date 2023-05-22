@@ -26,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 public class PetDetail extends AppCompatActivity implements View.OnClickListener{
     private RelativeLayout detailLayout;
     private LinearLayout detailLinear;
-    private TextView txtName, txtBreed, txtAge, txtDetail, btnAdopt;
+    private TextView txtName, txtBreed, txtAge, txtDetail, txtGender ,btnAdopt;
     private ImageView imgPet,imgDetail1, imgDetail2, imgDetail3, imgDetail4, btnBack;
     private String key,img,name,age;
     String img1, img2, img3, img4;
@@ -44,6 +44,7 @@ public class PetDetail extends AppCompatActivity implements View.OnClickListener
         txtBreed = (TextView) findViewById(R.id.txt_breed);
         txtAge = (TextView) findViewById(R.id.txt_age) ;
         txtDetail = (TextView) findViewById(R.id.txt_detail);
+        txtGender = (TextView) findViewById(R.id.txt_gender);
 
 
         imgPet = (ImageView) findViewById(R.id.img_pet);
@@ -101,12 +102,12 @@ public class PetDetail extends AppCompatActivity implements View.OnClickListener
 
                         String male = ""+snapshot.child("sex").getValue();
                         if(male.compareTo("male") == 0){
-                            txtName.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.baseline_male_24, 0);
+                            txtGender.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.baseline_male_24, 0);
                         }
                         else if(male.compareTo("female") == 0){
-                            txtName.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.baseline_female_24, 0);
+                            txtGender.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.baseline_female_24, 0);
                         }
-                        else txtName.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0);
+                        else txtGender.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0);
 
                         String detail = ""+snapshot.child("detail").getValue();
                         txtDetail.setText("\t" + detail);

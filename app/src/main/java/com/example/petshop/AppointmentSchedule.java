@@ -38,7 +38,7 @@ public class AppointmentSchedule extends AppCompatActivity implements View.OnLon
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_schedule);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("user");
+        mDatabase = FirebaseDatabase.getInstance().getReference("Schedule");
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
 
