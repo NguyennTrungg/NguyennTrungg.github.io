@@ -52,8 +52,9 @@ public class MainActivity extends AppCompatActivity implements IPetLoadListener{
         setContentView(R.layout.activity_main);
 
         init();
-        LoadCatFromFireBase();
         LoadDogFromFireBase();
+        LoadCatFromFireBase();
+
 
         BottomNavigationView botNav = (BottomNavigationView) findViewById(R.id.nav);
         botNav.setSelectedItemId(R.id.home);
@@ -107,7 +108,13 @@ public class MainActivity extends AppCompatActivity implements IPetLoadListener{
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
                             for (DataSnapshot petSnapshot : snapshot.getChildren()) {
-                                PetModel pet = petSnapshot.getValue(PetModel.class);
+                                String title = ""+petSnapshot.child("title").getValue();
+                                String age = ""+petSnapshot.child("age").getValue();
+                                String img = ""+petSnapshot.child("img").getValue();
+                                PetModel pet = new PetModel();
+                                pet.setTitle(title);
+                                pet.setAge(age);
+                                pet.setImg(img);
                                 pet.setKey(petSnapshot.getKey());
                                 cat.add(pet);
                             }
@@ -132,7 +139,13 @@ public class MainActivity extends AppCompatActivity implements IPetLoadListener{
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
                             for (DataSnapshot petSnapshot : snapshot.getChildren()) {
-                                PetModel pet = petSnapshot.getValue(PetModel.class);
+                                String title = ""+petSnapshot.child("title").getValue();
+                                String age = ""+petSnapshot.child("age").getValue();
+                                String img = ""+petSnapshot.child("img").getValue();
+                                PetModel pet = new PetModel();
+                                pet.setTitle(title);
+                                pet.setAge(age);
+                                pet.setImg(img);
                                 pet.setKey(petSnapshot.getKey());
                                 dog.add(pet);
                             }

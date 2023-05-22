@@ -32,13 +32,14 @@ public class AppointmentSchedule extends AppCompatActivity implements View.OnLon
     private ImageView btnBack;
     private DatabaseReference mDatabase;
     RelativeLayout appointmentLayout;
+    String vaccine, takecare, bath, grooming;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_schedule);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("user");
+        mDatabase = FirebaseDatabase.getInstance().getReference("Schedule");
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
 
@@ -61,10 +62,10 @@ public class AppointmentSchedule extends AppCompatActivity implements View.OnLon
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String vaccine = ""+snapshot.child("Vaccine").getValue();
-                        String takecare = ""+snapshot.child("TakeCare").getValue();
-                        String bath = ""+snapshot.child("AnimalBath").getValue();
-                        String grooming = ""+snapshot.child("Grooming").getValue();
+                        vaccine = ""+snapshot.child("Vaccine").getValue();
+                        takecare = ""+snapshot.child("TakeCare").getValue();
+                        bath = ""+snapshot.child("AnimalBath").getValue();
+                        grooming = ""+snapshot.child("Grooming").getValue();
 
                         if (vaccine.compareTo("null") != 0) txtVaccine.setText(txtVaccine.getText() + vaccine);
                         else txtVaccine.setText(txtVaccine.getText());
@@ -87,13 +88,17 @@ public class AppointmentSchedule extends AppCompatActivity implements View.OnLon
     @Override
     public boolean onLongClick(View v) {
         if (v == txtVaccine)
-            deleteSchedule("Vaccine");
+            if (vaccine.compareTo("null") != 0)
+                deleteSchedule("Vaccine");
         if (v == txtTakecare)
-            deleteSchedule("TakeCare");
+            if (takecare.compareTo("null") != 0)
+                deleteSchedule("TakeCare");
         if (v == txtBath)
-            deleteSchedule("AnimalBath");
+            if (bath.compareTo("null") != 0)
+                deleteSchedule("AnimalBath");
         if (v == txtGrooming)
-            deleteSchedule("Grooming");
+            if (grooming.compareTo("null") != 0)
+                deleteSchedule("Grooming");
         return false;
     }
 
@@ -108,7 +113,7 @@ public class AppointmentSchedule extends AppCompatActivity implements View.OnLon
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         String uid = user.getUid();
                         FirebaseDatabase.getInstance()
-                                .getReference("user")
+                                .getReference("Schedule")
                                 .child(uid)
                                 .child(service)
                                 .removeValue()

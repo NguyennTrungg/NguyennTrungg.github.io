@@ -5,11 +5,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
+        android:id="@+id/panel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_view"/>
+        android:layout_height="?android:attr/actionBarSize"
+        android:orientation="horizontal"
+        android:weightSum="16"
+        android:background="@drawable/custom_view">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:src="@drawable/baseline_navigate_before_24"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_gravity="start|center_vertical"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="11"
+            android:id="@+id/tx_Total"
+            android:text="Your Profile"
+            android:gravity="center"
+            android:textStyle="bold|italic"
+            android:textSize="30sp"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/avatar"
@@ -37,30 +59,6 @@
         android:layout_below="@id/txt_name"
         android:background="@drawable/custom_edt"
         android:layout_marginTop="10dp"
-        android:text="User"
-        android:paddingHorizontal="10dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"/>
-
-    <TextView
-        android:id="@+id/txt_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Địa chỉ"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:layout_below="@id/ed_name"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="20dp"/>
-    <EditText
-        android:id="@+id/ed_address"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/txt_address"
-        android:background="@drawable/custom_edt"
-        android:layout_marginTop="10dp"
-        android:text="TP HCM"
         android:paddingHorizontal="10dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"/>
@@ -73,7 +71,7 @@
         android:textSize="20dp"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
-        android:layout_below="@id/ed_address"
+        android:layout_below="@id/ed_name"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="20dp"/>
     <EditText
@@ -83,9 +81,46 @@
         android:layout_below="@id/txt_PhoneNum"
         android:background="@drawable/custom_edt"
         android:layout_marginTop="10dp"
-        android:text="0792809955"
+        android:paddingHorizontal="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp" />
+
+    <TextView
+        android:id="@+id/txt_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Địa chỉ"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:layout_below="@id/ed_PhoneNum"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="20dp"/>
+    <EditText
+        android:id="@+id/ed_address"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/txt_address"
+        android:background="@drawable/custom_edt"
+        android:layout_marginTop="10dp"
         android:paddingHorizontal="10dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_update"
+        android:layout_marginLeft="25dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        app:cornerRadius="8dp"
+        android:text="Update"
+        android:textSize="15sp"
+        android:textAllCaps="false"
+        android:backgroundTint="#A6DAF5"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_below="@id/ed_address"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
 
 </RelativeLayout>

@@ -24,16 +24,19 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Other extends AppCompatActivity implements View.OnClickListener{
     RelativeLayout orderLayout;
-    private TextView appointmentSchedule, changePassword, btnLogout;
+    private TextView profile ,appointmentSchedule, changePassword, btnLogout;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.orders);
 
         orderLayout = (RelativeLayout) findViewById(R.id.order_layout);
-        changePassword = (TextView) findViewById(R.id.ed_ChangePass);
-        appointmentSchedule = (TextView) findViewById(R.id.et_LichHen);
-        btnLogout = (TextView) findViewById(R.id.ed_LogOut);
 
+        profile = (TextView) findViewById(R.id.txt_profile) ;
+        changePassword = (TextView) findViewById(R.id.txt_ChangePass);
+        appointmentSchedule = (TextView) findViewById(R.id.txt_LichHen);
+        btnLogout = (TextView) findViewById(R.id.txt_LogOut);
+
+        profile.setOnClickListener(this);
         changePassword.setOnClickListener(this);
         appointmentSchedule.setOnClickListener(this);
         btnLogout.setOnClickListener(this);
@@ -63,6 +66,10 @@ public class Other extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        if (v == profile){
+            Intent intent = new Intent(this, Profile.class);
+            startActivity(intent);
+        }
         if (v == appointmentSchedule)
             startActivity(new Intent(this, AppointmentSchedule.class));
         if (v == changePassword){
@@ -81,7 +88,7 @@ public class Other extends AppCompatActivity implements View.OnClickListener{
         }
         if (v == btnLogout){
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(getApplicationContext(), SignUp_In.class);
+            Intent intent = new Intent(this, SignUp_In.class);
             startActivity(intent);
             finish();
         }

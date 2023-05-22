@@ -106,7 +106,7 @@ public class Services extends AppCompatActivity implements View.OnClickListener{
             CheckSchedule("Grooming");
     }
     public void CheckSchedule(String service){
-        FirebaseDatabase.getInstance().getReference("user").child(uid)
+        FirebaseDatabase.getInstance().getReference("Schedule").child(uid)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -237,7 +237,7 @@ public class Services extends AppCompatActivity implements View.OnClickListener{
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if (user != null){
                         String uid = user.getUid();
-                        mDatabase = FirebaseDatabase.getInstance().getReference("user");
+                        mDatabase = FirebaseDatabase.getInstance().getReference("Schedule");
                         mDatabase.child(uid).child(service).setValue(edDate.getText() + " " + edTime.getText());
                         Toast.makeText(Services.this,"Your apointment has been set, see you there!", Toast.LENGTH_SHORT).show();
                     }
