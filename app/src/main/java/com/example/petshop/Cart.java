@@ -203,6 +203,7 @@ public class Cart extends AppCompatActivity implements ICartLoadListener {
                                 .removeValue()
                                 .addOnSuccessListener(aVoid -> EventBus.getDefault().postSticky(new MyUpdateCartEvent()));
 
+                        FirebaseDatabase.getInstance().getReference("Orders").child(uid);
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(Cart.this);
                         builder1.setTitle("Thanks for your Purchase!")
                                 .setMessage("Your Purchase will be sent to your address as soon as possible!")
